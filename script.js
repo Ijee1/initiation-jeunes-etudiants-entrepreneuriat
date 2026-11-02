@@ -169,6 +169,31 @@ if (registrationForm) {
         return true;
     }
 
+// Récupérer les informations saisies
+const formData = new FormData(registrationForm);
+
+const inscription = {
+    nom: formData.get("nom") || "",
+    prenoms: formData.get("prenoms") || "",
+    whatsapp: formData.get("whatsapp") || "",
+    email: formData.get("email") || "",
+    statut: formData.get("statut") || "",
+    pays: formData.get("pays") || "",
+    universite: formData.get("universite") || "",
+    filiere: formData.get("filiere") || "",
+    niveau: formData.get("niveau") || "",
+    ville: formData.get("ville") || "",
+    idee: formData.get("idee_projet") || "",
+    projet: formData.get("description_projet") || ""
+};
+
+// Conserver les informations pour la page merci.html
+sessionStorage.setItem(
+    "idjeeInscription",
+    JSON.stringify(inscription)
+);
+
+
     /* ==================================
        4.2 SOUMISSION DU FORMULAIRE
     ================================== */
