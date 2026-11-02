@@ -1,9 +1,9 @@
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    /* ======================================
+    /* =========================================
        1. MENU DE NAVIGATION MOBILE
-    ====================================== */
+    ========================================= */
 
     const menuToggle = document.getElementById("menu-toggle");
     const navigation = document.getElementById("navigation");
@@ -27,12 +27,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (menuToggle && navigation) {
 
-        // Ouvrir et fermer le menu
         menuToggle.addEventListener("click", function () {
 
             const isOpen = navigation.classList.toggle("active");
 
-            menuToggle.setAttribute("aria-expanded", String(isOpen));
+            menuToggle.setAttribute(
+                "aria-expanded",
+                String(isOpen)
+            );
 
             menuToggle.setAttribute(
                 "aria-label",
@@ -55,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         });
 
-        // Fermer le menu en cliquant à l'extérieur
+        // Fermer en cliquant en dehors du menu
         document.addEventListener("click", function (event) {
 
             if (
@@ -67,7 +69,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         });
 
-        // Fermer le menu avec la touche Échap
+        // Fermer avec la touche Échap
         document.addEventListener("keydown", function (event) {
 
             if (event.key === "Escape") {
@@ -79,20 +81,22 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* ======================================
-       2. ANNÉE AUTOMATIQUE DU COPYRIGHT
-    ====================================== */
+    /* =========================================
+       2. ANNÉE AUTOMATIQUE
+    ========================================= */
 
     const currentYear = document.getElementById("current-year");
 
     if (currentYear) {
+
         currentYear.textContent = new Date().getFullYear();
+
     }
 
 
-    /* ======================================
+    /* =========================================
        3. DÉFILEMENT FLUIDE
-    ====================================== */
+    ========================================= */
 
     const internalLinks = document.querySelectorAll('a[href^="#"]');
 
@@ -102,9 +106,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             const href = link.getAttribute("href");
 
-            if (!href || href === "#") {
-                return;
-            }
+            if (!href || href === "#") return;
 
             const targetElement = document.getElementById(
                 href.substring(1)
@@ -126,111 +128,204 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-    /* ======================================
-       4. FORMULAIRE DE PRÉINSCRIPTION
-       FORMSUBMIT - ENVOI CLASSIQUE
-    ====================================== */
+    /* =========================================
+       4. FORMULAIRE DE PRÉINSCRIPTION IDJEE
+    ========================================= */
 
-    
-const registrationForm = document.getElementById("registration-form");
+    const registrationForm = document.getElementById(
+        "registration-form"
+    );
 
-if (registrationForm) {
+    if (registrationForm) {
 
-    const submitButton = document.getElementById("submit-button");
-    const whatsappInput = document.getElementById("whatsapp");
+        const submitButton = document.getElementById("submit-button");
 
-    let formIsSubmitting = false;
+        const whatsappInput = document.getElementById("whatsapp");
 
-    /* ==================================
-       4.1 VALIDATION WHATSAPP
-    ================================== */
+        const formMessage = document.getElementById("form-message");
 
-    function validateWhatsApp() {
+        let formIsSubmitting = false;
 
-        if (!whatsappInput) {
+
+        /* -----------------------------------------
+           4.1 VALIDATION DU NUMÉRO WHATSAPP
+        ----------------------------------------- */
+
+        function validateWhatsApp() {
+
+            if (!whatsappInput) {
+                return true;
+            }
+
+            const phoneNumber = whatsappInput.value.replace(/\D/g, "");
+
+            if (phoneNumber.length < 8) {
+
+                whatsappInput.setCustomValidity(
+                    "Veuillez saisir un numéro WhatsApp valide."
+                );
+
+                whatsappInput.reportValidity();
+
+                whatsappInput.setCustomValidity("");
+
+                return false;
+            }
+
             return true;
         }
 
-        const phoneNumber = whatsappInput.value.replace(/\D/g, "");
 
-        if (phoneNumber.length < 8) {
+        /* -----------------------------------------
+           4.2 RÉCUPÉRATION DES INFORMATIONS
+        ----------------------------------------- */
 
-            whatsappInput.setCustomValidity(
-                "Veuillez saisir un numéro WhatsApp valide."
+        function saveRegistrationData() {
+
+            const formData = new FormData(registrationForm);
+
+            const inscription = {
+
+                nom: formData.get("nom") || "",
+
+                prenoms: formData.get("prenoms") || "",
+
+                whatsapp: formData.get("whatsapp") || "",
+
+                email: formData.get("email") || "",
+
+                statut: formData.get("statut") || "",
+
+                pays: formData.get("pays") || "",
+
+                universite: formData.get("universite") || "",
+
+                filiere: formData.get("filiere") || "",
+
+                niveau: formData.get("niveau") || "",
+
+                ville: formData.get("ville") || "",
+
+                idee: formData.get("idee_projet") || "",
+
+                projet: formData.get("description_projet") || ""
+
+            };
+
+            // Vérifier que les informations principales existent
+            if (
+                !inscription.nom ||
+                !inscription.prenoms ||
+                !inscription.whatsapp ||
+                !inscription.statut ||
+                !inscription.pays
+            ) {
+
+                throw new Error(
+                    "Certaines informations obligatoires sont manquantes."
+                );
+
+            }
+
+            // Enregistrer les informations dans la session
+            sessionStorage.setItem(
+                "idjeeInscription",
+                JSON.stringify(inscription)
             );
 
-            whatsappInput.reportValidity();
+            // Vérifier que l'enregistrement a réussi
+            const savedData = sessionStorage.getItem(
+                "idjeeInscription"
+            );
 
-            whatsappInput.setCustomValidity("");
+            if (!savedData) {
 
-            return false;
+                throw new Error(
+                    "Impossible d'enregistrer les informations."
+                );
+
+            }
+
+            return true;
+
         }
 
-        return true;
+
+        /* -----------------------------------------
+           4.3 SOUMISSION DU FORMULAIRE
+        ----------------------------------------- */
+
+        registrationForm.addEventListener("submit", function (event) {
+
+            // Empêcher les doubles clics
+            if (formIsSubmitting) {
+
+                event.preventDefault();
+
+                return;
+
+            }
+
+            // Vérifier le numéro WhatsApp
+            if (!validateWhatsApp()) {
+
+                event.preventDefault();
+
+                return;
+
+            }
+
+            // Enregistrer les informations avant l'envoi
+            try {
+
+                saveRegistrationData();
+
+            } catch (error) {
+
+                event.preventDefault();
+
+                console.error(
+                    "Erreur de sauvegarde :",
+                    error
+                );
+
+                if (formMessage) {
+
+                    formMessage.textContent =
+                        "Impossible de préparer votre préinscription. Veuillez réessayer.";
+
+                }
+
+                alert(
+                    "Une erreur est survenue lors de la récupération de vos informations. Veuillez réessayer."
+                );
+
+                return;
+
+            }
+
+            // Autoriser un seul envoi
+            formIsSubmitting = true;
+
+            // Modifier le bouton
+            if (submitButton) {
+
+                submitButton.disabled = true;
+
+                submitButton.innerHTML =
+                    '<i class="fas fa-spinner fa-spin"></i> Envoi en cours...';
+
+            }
+
+            /*
+              IMPORTANT :
+              Ne pas utiliser event.preventDefault() ici.
+              Le navigateur doit transmettre directement
+              les informations à FormSubmit.
+            */
+
+        });
+
     }
-
-// Récupérer les informations saisies
-const formData = new FormData(registrationForm);
-
-const inscription = {
-    nom: formData.get("nom") || "",
-    prenoms: formData.get("prenoms") || "",
-    whatsapp: formData.get("whatsapp") || "",
-    email: formData.get("email") || "",
-    statut: formData.get("statut") || "",
-    pays: formData.get("pays") || "",
-    universite: formData.get("universite") || "",
-    filiere: formData.get("filiere") || "",
-    niveau: formData.get("niveau") || "",
-    ville: formData.get("ville") || "",
-    idee: formData.get("idee_projet") || "",
-    projet: formData.get("description_projet") || ""
-};
-
-// Conserver les informations pour la page merci.html
-sessionStorage.setItem(
-    "idjeeInscription",
-    JSON.stringify(inscription)
-);
-
-
-    /* ==================================
-       4.2 SOUMISSION DU FORMULAIRE
-    ================================== */
-
-    registrationForm.addEventListener("submit", function (event) {
-
-        // Empêcher les doubles soumissions
-        if (formIsSubmitting) {
-            event.preventDefault();
-            return;
-        }
-
-        // Vérifier le numéro WhatsApp
-        if (!validateWhatsApp()) {
-            event.preventDefault();
-            return;
-        }
-
-        // Mémoriser l'état d'envoi
-        formIsSubmitting = true;
-
-        // Modifier le bouton
-        if (submitButton) {
-
-            submitButton.disabled = true;
-
-            submitButton.innerHTML =
-                '<i class="fas fa-spinner fa-spin"></i> Envoi en cours...';
-
-        }
-
-        // Laisser le navigateur envoyer directement
-        // le formulaire à FormSubmit.
-
-    });
-
-}
-
 
 });
