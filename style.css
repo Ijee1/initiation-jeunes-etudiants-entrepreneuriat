@@ -467,3 +467,656 @@ button {
 .domain-card:hover .domain-number {
     color: rgba(255, 255, 255, 0.15);
 }
+
+
+/* =========================================
+   CREDIGITAL TECHNOLOGY
+   CSS COMPLET - PARTIE 2/2
+========================================= */
+
+/* 9. PARCOURS / ETAPES */
+.journey {
+    background: var(--light);
+}
+
+.journey-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+.journey-step {
+    position: relative;
+    background: var(--white);
+    padding: 28px 22px;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    transition: 0.3s ease;
+}
+
+.journey-step:hover {
+    transform: translateY(-6px);
+}
+
+.step-number {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--blue);
+    color: var(--white);
+    font-weight: 800;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.journey-step h3 {
+    color: var(--primary);
+    font-size: 17px;
+    margin-bottom: 10px;
+}
+
+.journey-step p {
+    color: var(--text);
+    font-size: 14px;
+}
+
+/* 10. SECTION INSCRIPTION */
+.registration {
+    background: var(--white);
+}
+
+.registration-wrapper {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 35px;
+    align-items: start;
+}
+
+.registration-info {
+    background: var(--primary);
+    color: var(--white);
+    padding: 35px 30px;
+    border-radius: var(--radius);
+}
+
+.registration-icon {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 197, 232, 0.15);
+    color: var(--cyan);
+    border-radius: 15px;
+    font-size: 27px;
+    margin-bottom: 22px;
+}
+
+.registration-info h3 {
+    font-size: 23px;
+    margin-bottom: 15px;
+}
+
+.registration-info p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.registration-info ul {
+    list-style: none;
+}
+
+.registration-info ul li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 13px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.registration-info ul li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--cyan);
+    font-weight: 800;
+}
+
+.registration-note {
+    margin-top: 25px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.09);
+    border-radius: 9px;
+    font-size: 13px;
+}
+
+/* 11. FORMULAIRE */
+.registration-form {
+    padding: 35px;
+    background: var(--light);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+}
+
+.registration-form h3 {
+    color: var(--primary);
+    font-size: 23px;
+    margin-bottom: 8px;
+}
+
+.form-description {
+    color: var(--text);
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+.form-group label {
+    color: var(--primary);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 13px 14px;
+    border: 1px solid #d7e1eb;
+    border-radius: 8px;
+    background: var(--white);
+    color: var(--dark);
+    outline: none;
+    font-size: 14px;
+    transition: 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--blue);
+    box-shadow: 0 0 0 3px rgba(8, 120, 209, 0.1);
+}
+
+.form-group textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.consent-group {
+    margin-top: 20px;
+}
+
+.consent-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    color: var(--text);
+    font-size: 13px;
+}
+
+.consent-label input {
+    margin-top: 5px;
+    accent-color: var(--blue);
+}
+
+.form-message {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.submit-button {
+    width: 100%;
+    margin-top: 22px;
+    padding: 15px 20px;
+    background: var(--blue);
+    color: var(--white);
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 15px;
+    transition: 0.3s ease;
+}
+
+.submit-button:hover {
+    background: var(--primary);
+    transform: translateY(-2px);
+}
+
+.form-security {
+    margin-top: 15px;
+    color: var(--text);
+    font-size: 12px;
+    text-align: center;
+}
+
+/* 12. SECTION CONTACT */
+.contact {
+    background: var(--light);
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.contact-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 30px 22px;
+    text-align: center;
+    transition: 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow);
+}
+
+.contact-icon {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 18px;
+    border-radius: 50%;
+    background: rgba(8, 120, 209, 0.1);
+    color: var(--blue);
+    font-size: 25px;
+}
+
+.whatsapp-icon {
+    background: rgba(18, 168, 117, 0.12);
+    color: var(--green);
+}
+
+.email-icon {
+    background: rgba(8, 120, 209, 0.1);
+    color: var(--blue);
+}
+
+.contact-card h3 {
+    color: var(--primary);
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.contact-card p {
+    color: var(--text);
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+.contact-link {
+    color: var(--blue);
+    font-size: 14px;
+    font-weight: 700;
+    overflow-wrap: anywhere;
+}
+
+.contact-link:hover {
+    color: var(--green);
+}
+
+/* 13. APPEL A L'ACTION FINAL */
+.final-cta {
+    position: relative;
+    padding: 75px 20px;
+    background: linear-gradient(120deg, var(--primary), var(--secondary));
+    color: var(--white);
+    text-align: center;
+}
+
+.cta-label {
+    display: inline-block;
+    color: var(--cyan);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.final-cta h2 {
+    max-width: 750px;
+    margin: 0 auto 18px;
+    font-size: clamp(27px, 4vw, 40px);
+    line-height: 1.25;
+}
+
+.final-cta p {
+    max-width: 650px;
+    margin: 0 auto 25px;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 15px;
+}
+
+/* 14. PIED DE PAGE */
+.footer {
+    background: #071629;
+    color: var(--white);
+    padding: 65px 0 0;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    gap: 40px;
+    padding-bottom: 40px;
+}
+
+.footer-brand {
+    max-width: 350px;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.footer-logo img {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+.footer-logo span {
+    color: var(--white);
+    font-size: 16px;
+    font-weight: 800;
+}
+
+.footer-brand p {
+    color: #b9c8d8;
+    font-size: 13px;
+}
+
+.footer-links h3,
+.footer-contact h3 {
+    font-size: 17px;
+    margin-bottom: 20px;
+    color: var(--cyan);
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a,
+.footer-contact a {
+    color: #b9c8d8;
+    font-size: 13px;
+    transition: 0.3s ease;
+}
+
+.footer-links a:hover,
+.footer-contact a:hover {
+    color: var(--cyan);
+}
+
+.footer-contact p {
+    color: #b9c8d8;
+    font-size: 13px;
+    margin-bottom: 12px;
+    overflow-wrap: anywhere;
+}
+
+.footer-motto {
+    padding: 20px 0;
+    text-align: center;
+    color: var(--cyan);
+    font-size: 14px;
+    font-weight: 600;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-bottom {
+    padding: 18px 10px;
+    background: #04101e;
+    text-align: center;
+    color: #aab9c8;
+    font-size: 12px;
+}
+
+/* 15. ADAPTATION TABLETTES */
+@media (max-width: 992px) {
+    .navigation {
+        gap: 14px;
+    }
+
+    .navigation a {
+        font-size: 12px;
+    }
+
+    .journey-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 25px;
+    }
+
+    .registration-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* 16. ADAPTATION TELEPHONES */
+@media (max-width: 768px) {
+    .section-padding {
+        padding: 65px 0;
+    }
+
+    .container {
+        width: 92%;
+    }
+
+    /* Navigation mobile */
+    .nav-container {
+        min-height: 72px;
+    }
+
+    .logo-image {
+        width: 45px;
+        height: 45px;
+    }
+
+    .logo-text strong {
+        font-size: 13px;
+    }
+
+    .logo-text small {
+        font-size: 10px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .navigation {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 20px 5%;
+        background: var(--white);
+        box-shadow: 0 12px 20px rgba(0, 0, 0, 0.08);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+    }
+
+    .navigation.active {
+        display: flex;
+    }
+
+    .navigation a {
+        display: block;
+        padding: 13px 5px;
+        font-size: 14px;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .navigation .nav-button {
+        margin-top: 12px;
+        text-align: center;
+        border-bottom: none;
+    }
+
+    /* Accueil mobile */
+    .hero {
+        min-height: 560px;
+        background-position: center;
+    }
+
+    .hero-content {
+        padding-top: 75px;
+        padding-bottom: 75px;
+    }
+
+    .hero-content h1 {
+        font-size: 35px;
+    }
+
+    .hero-description {
+        font-size: 14px;
+    }
+
+    .hero-buttons {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .hero-buttons a {
+        width: 100%;
+    }
+
+    /* Grilles mobile */
+    .about-grid,
+    .vision-grid,
+    .domains-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .journey-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .registration-form {
+        padding: 25px 18px;
+    }
+
+    .registration-info {
+        padding: 28px 22px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .section-heading {
+        margin-bottom: 35px;
+    }
+}
+
+/* 17. PETITS ECRANS */
+@media (max-width: 480px) {
+    .logo {
+        gap: 8px;
+    }
+
+    .logo-image {
+        width: 40px;
+        height: 40px;
+    }
+
+    .logo-text strong {
+        font-size: 11px;
+    }
+
+    .logo-text small {
+        font-size: 9px;
+    }
+
+    .hero-content h1 {
+        font-size: 30px;
+    }
+
+    .hero-label {
+        font-size: 10px;
+    }
+
+    .section-heading h2 {
+        font-size: 26px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-group.full-width {
+        grid-column: auto;
+    }
+
+    .final-cta {
+        padding: 60px 18px;
+    }
+}
+
+/* 18. ACCESSIBILITE ET CONFORT */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid var(--cyan);
+    outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}
+
