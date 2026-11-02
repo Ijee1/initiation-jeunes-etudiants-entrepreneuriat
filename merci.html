@@ -5,94 +5,450 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Merci pour votre préinscription | IDJEE</title>
+    <title>Préinscription réussie | IDJEE</title>
 
-    <meta name="description" content="Merci pour votre intérêt envers le programme Initiation des Jeunes Étudiants à l'Entrepreneuriat.">
+    <meta name="description" content="Confirmation de votre préinscription au programme IDJEE.">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f1f5f9;
+            color: #172554;
+            min-height: 100vh;
+            padding: 35px 16px;
+        }
+
+        .container {
+            max-width: 760px;
+            margin: auto;
+        }
+
+        .brand {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .brand-name {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 25px;
+            font-weight: 800;
+            color: #12346b;
+            letter-spacing: 1px;
+        }
+
+        .brand-name span {
+            color: #0eaaa0;
+        }
+
+        .brand p {
+            color: #64748b;
+            font-size: 12px;
+            margin-top: 7px;
+            letter-spacing: 1.5px;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 18px;
+            padding: 35px;
+            box-shadow: 0 12px 40px rgba(15, 23, 42, 0.08);
+            border: 1px solid #e2e8f0;
+        }
+
+        .success-icon {
+            width: 76px;
+            height: 76px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            background: #dcfce7;
+            color: #16a34a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 38px;
+            font-weight: 800;
+        }
+
+        .heading {
+            text-align: center;
+            margin-bottom: 28px;
+        }
+
+        .heading h1 {
+            font-family: 'Montserrat', sans-serif;
+            color: #12346b;
+            font-size: 27px;
+            margin-bottom: 12px;
+        }
+
+        .heading p {
+            color: #64748b;
+            line-height: 1.7;
+            font-size: 15px;
+        }
+
+        .heading strong {
+            color: #0e8f84;
+        }
+
+        .details-title {
+            font-size: 17px;
+            color: #12346b;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+
+        .detail-item {
+            background: #f8fafc;
+            padding: 14px;
+            border-radius: 10px;
+            border: 1px solid #e2e8f0;
+            min-width: 0;
+        }
+
+        .detail-item.full {
+            grid-column: 1 / -1;
+        }
+
+        .detail-item span {
+            display: block;
+            color: #64748b;
+            font-size: 12px;
+            margin-bottom: 6px;
+        }
+
+        .detail-item strong {
+            color: #1e293b;
+            font-size: 14px;
+            overflow-wrap: anywhere;
+        }
+
+        .notice {
+            margin-top: 25px;
+            padding: 16px;
+            background: #eff6ff;
+            border-left: 4px solid #2563eb;
+            border-radius: 8px;
+            color: #334155;
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+        .community {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .community h2 {
+            color: #12346b;
+            font-size: 19px;
+            margin-bottom: 10px;
+        }
+
+        .community p {
+            color: #64748b;
+            font-size: 14px;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .whatsapp-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: #16a34a;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 16px 25px;
+            border-radius: 9px;
+            font-weight: 700;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .whatsapp-button:hover {
+            background: #15803d;
+            transform: translateY(-2px);
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 25px;
+            color: #94a3b8;
+            font-size: 12px;
+            line-height: 1.7;
+        }
+
+        .home-link {
+            display: inline-block;
+            margin-top: 12px;
+            color: #12346b;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .missing {
+            text-align: center;
+            color: #64748b;
+            line-height: 1.7;
+        }
+
+        @media (max-width: 600px) {
+            .card {
+                padding: 24px 17px;
+            }
+
+            .heading h1 {
+                font-size: 22px;
+            }
+
+            .details {
+                grid-template-columns: 1fr;
+            }
+
+            .detail-item.full {
+                grid-column: auto;
+            }
+
+            .whatsapp-button {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 
-<body class="thank-you-page">
+<body>
 
-    <main class="thank-you-card">
+    <main class="container">
 
-        <a href="index.html" class="logo">
-            <img src="images/logo.jpg" alt="Logo du programme" class="logo-image">
-        </a>
+        <header class="brand">
+            <div class="brand-name">
+                IDJEE<span>.</span>
+            </div>
+            <p>APPRENDRE • CRÉER • INNOVER • ENTREPRENDRE</p>
+        </header>
 
-        <div class="thank-you-icon">
-            <i class="fas fa-check"></i>
-        </div>
+        <section class="card">
 
-        <span class="section-label">PRÉINSCRIPTION ENREGISTRÉE</span>
+            <div class="success-icon">✓</div>
 
-        <h1>
-            Merci pour votre <span>intérêt !</span>
-        </h1>
+            <div class="heading">
+                <h1>Préinscription réussie !</h1>
 
-        <p class="thank-you-message">
-            Votre formulaire de préinscription au programme
-            <strong>INITIATION DES JEUNES ÉTUDIANTS À L'ENTREPRENEURIAT</strong>
-            a été transmis.
-        </p>
-
-        <div class="next-steps">
-            <h2>Quelles sont les prochaines étapes ?</h2>
-
-            <div class="step">
-                <span>01</span>
-                <p>Notre équipe prendra connaissance de vos informations.</p>
+                <p id="welcome-message">
+                    Merci pour votre intérêt envers le programme IDJEE.
+                </p>
             </div>
 
-            <div class="step">
-                <span>02</span>
-                <p>Nous vous contacterons pour vous communiquer les détails du programme.</p>
+            <div id="registration-details">
+
+                <h2 class="details-title">
+                    Récapitulatif de votre préinscription
+                </h2>
+
+                <div class="details">
+
+                    <div class="detail-item">
+                        <span>Nom et prénoms</span>
+                        <strong id="student-name">—</strong>
+                    </div>
+
+                    <div class="detail-item">
+                        <span>Adresse e-mail</span>
+                        <strong id="student-email">—</strong>
+                    </div>
+
+                    <div class="detail-item">
+                        <span>Numéro WhatsApp</span>
+                        <strong id="student-whatsapp">—</strong>
+                    </div>
+
+                    <div class="detail-item">
+                        <span>Statut actuel</span>
+                        <strong id="student-status">—</strong>
+                    </div>
+
+                    <div class="detail-item">
+                        <span>Pays</span>
+                        <strong id="student-country">—</strong>
+                    </div>
+
+                    <div class="detail-item">
+                        <span>Ville ou commune</span>
+                        <strong id="student-city">—</strong>
+                    </div>
+
+                    <div class="detail-item">
+                        <span>Université ou établissement</span>
+                        <strong id="student-school">—</strong>
+                    </div>
+
+                    <div class="detail-item">
+                        <span>Filière</span>
+                        <strong id="student-field">—</strong>
+                    </div>
+
+                    <div class="detail-item">
+                        <span>Niveau d'études</span>
+                        <strong id="student-level">—</strong>
+                    </div>
+
+                    <div class="detail-item">
+                        <span>As-tu une idée de projet ?</span>
+                        <strong id="student-idea">—</strong>
+                    </div>
+
+                    <div class="detail-item full">
+                        <span>Description du projet</span>
+                        <strong id="student-project">—</strong>
+                    </div>
+
+                </div>
+
             </div>
 
-            <div class="step">
-                <span>03</span>
-                <p>Vous recevrez les informations concernant les modalités de participation.</p>
+            <div class="notice">
+                <strong>Que se passe-t-il ensuite ?</strong><br>
+                Votre manifestation d'intérêt a été enregistrée dans
+                votre navigateur et votre formulaire a été transmis
+                pour traitement. L'équipe IDJEE pourra vous communiquer
+                les prochaines informations relatives au programme.
+                Cette page ne constitue pas encore une confirmation
+                d'admission définitive.
             </div>
-        </div>
 
-        <div class="important-note">
-            <i class="fas fa-info-circle"></i>
+            <div class="community">
+                <h2>Rejoignez la communauté IDJEE !</h2>
+
+                <p>
+                    Intégrez notre groupe WhatsApp pour recevoir les
+                    informations, les actualités et les communications
+                    relatives au programme.
+                </p>
+
+                <a
+                    href="https://chat.whatsapp.com/KS2ej9nu3jiBd2frdZrjZs?s=cl&p=a&mlu=4&ilr=4&iam=2"
+                    class="whatsapp-button"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Rejoindre la communauté WhatsApp →
+                </a>
+            </div>
+
+        </section>
+
+        <footer class="footer">
             <p>
-                <strong>Important :</strong>
-                cette préinscription ne constitue pas encore une admission définitive.
-                Votre participation sera confirmée après les prochaines étapes communiquées
-                par notre équipe.
+                IDJEE — Initiation des Jeunes Étudiants à l'Entrepreneuriat
             </p>
-        </div>
 
-        <a
-            href="https://wa.me/2290129776383?text=Bonjour%2C%20je%20viens%20de%20soumettre%20ma%20pr%C3%A9inscription%20au%20programme%20IDJEE."
-            class="btn btn-primary"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-            <i class="fab fa-whatsapp"></i>
-            Contacter l'équipe sur WhatsApp
-        </a>
+            <p>
+                Apprendre aujourd'hui pour entreprendre demain.
+            </p>
 
-        <a href="index.html" class="back-home">
-            <i class="fas fa-arrow-left"></i>
-            Retourner à l'accueil
-        </a>
-
-        <p class="thank-you-footer">
-            APPRENDRE • CRÉER • INNOVER • ENTREPRENDRE
-        </p>
+            <a
+                class="home-link"
+                href="https://ijee1.github.io/initiation-jeunes-etudiants-entrepreneuriat/"
+            >
+                ← Retour au site IDJEE
+            </a>
+        </footer>
 
     </main>
 
+    <script>
+        const savedData = sessionStorage.getItem("idjeeInscription");
+
+        if (savedData) {
+
+            try {
+
+                const student = JSON.parse(savedData);
+
+                const fullName = [
+                    student.nom,
+                    student.prenoms
+                ].filter(Boolean).join(" ");
+
+                document.getElementById("welcome-message").textContent =
+                    fullName
+                        ? `Merci ${fullName}, votre demande de préinscription a bien été transmise !`
+                        : "Merci pour votre intérêt envers le programme IDJEE.";
+
+                document.getElementById("student-name").textContent =
+                    fullName || "Non renseigné";
+
+                document.getElementById("student-email").textContent =
+                    student.email || "Non renseigné";
+
+                document.getElementById("student-whatsapp").textContent =
+                    student.whatsapp || "Non renseigné";
+
+                document.getElementById("student-status").textContent =
+                    student.statut || "Non renseigné";
+
+                document.getElementById("student-country").textContent =
+                    student.pays || "Non renseigné";
+
+                document.getElementById("student-city").textContent =
+                    student.ville || "Non renseigné";
+
+                document.getElementById("student-school").textContent =
+                    student.universite || "Non renseigné";
+
+                document.getElementById("student-field").textContent =
+                    student.filiere || "Non renseigné";
+
+                document.getElementById("student-level").textContent =
+                    student.niveau || "Non renseigné";
+
+                document.getElementById("student-idea").textContent =
+                    student.idee || "Non renseigné";
+
+                document.getElementById("student-project").textContent =
+                    student.projet || "Non renseigné";
+
+            } catch (error) {
+
+                document.getElementById("welcome-message").textContent =
+                    "Merci pour votre intérêt envers le programme IDJEE.";
+
+            }
+
+        } else {
+
+            document.getElementById("registration-details").innerHTML = `
+                <p class="missing">
+                    Aucun récapitulatif de préinscription n'est disponible
+                    dans cette session. Si vous venez de remplir le formulaire,
+                    vérifiez que vous avez utilisé le même navigateur et le même onglet.
+                </p>
+            `;
+
+            document.getElementById("welcome-message").textContent =
+                "Bienvenue sur la page de confirmation IDJEE.";
+
+        }
+    </script>
+
 </body>
 </html>
-  
