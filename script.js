@@ -108,7 +108,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =========================================
-       4. FORMULAIRE IDJEE - FORMSUBMIT AJAX
+       4. FORMULAIRE IJEE - FORMSUBMIT AJAX
     ========================================= */
 
     const registrationForm = document.getElementById(
@@ -122,7 +122,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const formMessage = document.getElementById("form-message");
 
     const formEndpoint =
-        "https://formsubmit.co/ajax/idjee06@gmail.com";
+        "https://formsubmit.co/ajax/odilonlaly000@gmail.com";
 
     let formIsSubmitting = false;
 
