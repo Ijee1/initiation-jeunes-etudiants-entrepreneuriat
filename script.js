@@ -131,125 +131,81 @@ document.addEventListener("DOMContentLoaded", function () {
        FORMSUBMIT - ENVOI CLASSIQUE
     ====================================== */
 
-    const registrationForm = document.getElementById("registration-form");
+    
+const registrationForm = document.getElementById("registration-form");
 
-    if (registrationForm) {
+if (registrationForm) {
 
-        const submitButton = document.getElementById("submit-button");
-        const whatsappInput = document.getElementById("whatsapp");
-        const formRedirect = document.getElementById("form-redirect");
+    const submitButton = document.getElementById("submit-button");
+    const whatsappInput = document.getElementById("whatsapp");
 
-        let formIsSubmitting = false;
+    let formIsSubmitting = false;
 
+    /* ==================================
+       4.1 VALIDATION WHATSAPP
+    ================================== */
 
-        /* ==================================
-           4.1 VALIDATION WHATSAPP
-        ================================== */
+    function validateWhatsApp() {
 
-        function validateWhatsApp() {
-
-            if (!whatsappInput) {
-                return true;
-            }
-
-            const phoneNumber = whatsappInput.value.replace(/\D/g, "");
-
-            if (phoneNumber.length < 8) {
-
-                whatsappInput.setCustomValidity(
-                    "Veuillez saisir un numéro WhatsApp valide."
-                );
-
-                whatsappInput.reportValidity();
-
-                whatsappInput.setCustomValidity("");
-
-                return false;
-            }
-
+        if (!whatsappInput) {
             return true;
         }
 
+        const phoneNumber = whatsappInput.value.replace(/\D/g, "");
 
-        /* ==================================
-           4.2 PRÉPARATION DE LA REDIRECTION
-        ================================== */
+        if (phoneNumber.length < 8) {
 
-        function prepareRedirect() {
+            whatsappInput.setCustomValidity(
+                "Veuillez saisir un numéro WhatsApp valide."
+            );
 
-            if (!formRedirect) {
-                return true;
-            }
+            whatsappInput.reportValidity();
 
-            let currentPath = window.location.pathname;
+            whatsappInput.setCustomValidity("");
 
-            // Retirer index.html si présent
-            currentPath = currentPath.replace(/index\.html$/i, "");
-
-            // Garantir un chemin se terminant par /
-            if (!currentPath.endsWith("/")) {
-                currentPath += "/";
-            }
-
-            // Construire l'adresse de merci.html
-            const thankYouURL =
-                window.location.origin +
-                currentPath +
-                "merci.html";
-
-            formRedirect.value = thankYouURL;
-
-            return true;
+            return false;
         }
 
-
-        /* ==================================
-           4.3 SOUMISSION DU FORMULAIRE
-        ================================== */
-
-        registrationForm.addEventListener("submit", function (event) {
-
-            // Empêcher les doubles soumissions
-            if (formIsSubmitting) {
-                event.preventDefault();
-                return;
-            }
-
-            // Vérifier le numéro WhatsApp
-            if (!validateWhatsApp()) {
-                event.preventDefault();
-                return;
-            }
-
-            // Préparer la page de confirmation
-            prepareRedirect();
-
-            // Mémoriser l'état d'envoi
-            formIsSubmitting = true;
-
-            // Modifier le bouton
-            if (submitButton) {
-
-                submitButton.disabled = true;
-
-                submitButton.innerHTML =
-                    '<i class="fas fa-spinner fa-spin"></i> Envoi en cours...';
-
-            }
-
-            /*
-              IMPORTANT :
-              Ne pas utiliser preventDefault() ici.
-
-              Le navigateur envoie directement les données
-              à FormSubmit grâce à la méthode POST.
-
-              FormSubmit traite ensuite le formulaire et
-              redirige le participant vers merci.html.
-            */
-
-        });
-
+        return true;
     }
+
+    /* ==================================
+       4.2 SOUMISSION DU FORMULAIRE
+    ================================== */
+
+    registrationForm.addEventListener("submit", function (event) {
+
+        // Empêcher les doubles soumissions
+        if (formIsSubmitting) {
+            event.preventDefault();
+            return;
+        }
+
+        // Vérifier le numéro WhatsApp
+        if (!validateWhatsApp()) {
+            event.preventDefault();
+            return;
+        }
+
+        // Mémoriser l'état d'envoi
+        formIsSubmitting = true;
+
+        // Modifier le bouton
+        if (submitButton) {
+
+            submitButton.disabled = true;
+
+            submitButton.innerHTML =
+                '<i class="fas fa-spinner fa-spin"></i> Envoi en cours...';
+
+        }
+
+        // Laisser le navigateur envoyer directement
+        // le formulaire à FormSubmit.
+
+    });
+
+}
+
 
 });
