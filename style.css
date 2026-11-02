@@ -235,7 +235,7 @@ button {
     min-height: 620px;
     display: flex;
     align-items: center;
-    background-image: url("image.png");
+    background-image: url("img.png");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
