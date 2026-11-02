@@ -1,27 +1,35 @@
 
-/* =========================================
-   CREDIGITAL TECHNOLOGY
-   INITIATION DES JEUNES ETUDIANTS
+/* ==================================================
+   CREDIGITAL TECHNOLOGY ACADEMY
+   NOUVELLE IDENTITE VISUELLE
    CSS COMPLET - PARTIE 1/2
-========================================= */
+   Couleurs : Bleu nuit - Or - Jaune - Bleu - Vert
+================================================== */
 
-/* 1. VARIABLES ET COULEURS */
+/* 1. PALETTE DE COULEURS */
 :root {
-    --primary: #0b1f3a;
-    --secondary: #123d68;
-    --blue: #0878d1;
-    --cyan: #00c5e8;
-    --green: #12a875;
-    --white: #ffffff;
-    --light: #f4f8fc;
-    --dark: #172b40;
+    --primary: #0B1F3A;
+    --secondary: #123D68;
+
+    --gold: #D4A017;
+    --gold-light: #F5C542;
+    --gold-dark: #A87908;
+
+    --blue: #0878D1;
+    --cyan: #00C5E8;
+    --green: #12A875;
+
+    --white: #FFFFFF;
+    --light: #F4F8FC;
+    --dark: #172B40;
     --text: #526477;
-    --border: #e1eaf2;
+    --border: #E1EAF2;
+
     --shadow: 0 10px 35px rgba(11, 31, 58, 0.09);
     --radius: 16px;
 }
 
-/* 2. RESET GENERAL */
+/* 2. RESET ET BASE */
 * {
     margin: 0;
     padding: 0;
@@ -30,7 +38,7 @@
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 85px;
+    scroll-padding-top: 90px;
 }
 
 body {
@@ -80,10 +88,11 @@ button {
 
 .section-tag {
     display: inline-block;
-    color: var(--blue);
-    background: rgba(8, 120, 209, 0.09);
-    padding: 7px 16px;
+    padding: 7px 17px;
     border-radius: 30px;
+    background: rgba(212, 160, 23, 0.13);
+    color: var(--gold-dark);
+    border: 1px solid rgba(212, 160, 23, 0.3);
     font-size: 12px;
     font-weight: 700;
     letter-spacing: 1.2px;
@@ -100,7 +109,7 @@ button {
 }
 
 .section-heading h2 span {
-    color: var(--blue);
+    color: var(--gold);
 }
 
 .section-heading p {
@@ -108,6 +117,7 @@ button {
     font-size: 15px;
 }
 
+/* 4. BOUTONS GENERAUX */
 .hero-buttons {
     display: flex;
     align-items: center;
@@ -129,14 +139,15 @@ button {
     transform: translateY(-3px);
 }
 
-/* 4. EN-TETE ET NAVIGATION */
+/* 5. EN-TETE ET NAVIGATION */
 .header {
     position: sticky;
     top: 0;
     z-index: 1000;
     width: 100%;
-    background: var(--white);
-    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.07);
+    background: var(--primary);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    border-bottom: 3px solid var(--gold);
 }
 
 .nav-container {
@@ -159,6 +170,7 @@ button {
     height: 55px;
     object-fit: contain;
     border-radius: 50%;
+    border: 2px solid var(--gold);
 }
 
 .logo-text {
@@ -168,13 +180,13 @@ button {
 }
 
 .logo-text strong {
-    color: var(--primary);
+    color: var(--white);
     font-size: 15px;
     font-weight: 800;
 }
 
 .logo-text small {
-    color: var(--blue);
+    color: var(--gold-light);
     font-size: 11px;
     font-weight: 600;
 }
@@ -186,37 +198,38 @@ button {
 }
 
 .navigation a {
-    color: var(--dark);
+    color: var(--white);
     font-size: 13px;
     font-weight: 600;
     transition: 0.3s ease;
 }
 
 .navigation a:hover {
-    color: var(--blue);
+    color: var(--gold-light);
 }
 
 .navigation .nav-button {
-    background: var(--blue);
-    color: var(--white);
+    background: var(--gold);
+    color: var(--primary);
     padding: 11px 19px;
     border-radius: 7px;
+    font-weight: 800;
 }
 
 .navigation .nav-button:hover {
-    background: var(--primary);
-    color: var(--white);
+    background: var(--gold-light);
+    color: var(--primary);
 }
 
 .menu-toggle {
     display: none;
     border: none;
     background: transparent;
-    color: var(--primary);
+    color: var(--gold-light);
     font-size: 27px;
 }
 
-/* 5. SECTION ACCUEIL / HERO */
+/* 6. SECTION ACCUEIL */
 .hero {
     position: relative;
     min-height: 620px;
@@ -233,10 +246,10 @@ button {
     position: absolute;
     inset: 0;
     background: linear-gradient(
-        90deg,
-        rgba(5, 20, 40, 0.93) 0%,
-        rgba(5, 30, 55, 0.78) 55%,
-        rgba(5, 30, 55, 0.35) 100%
+        100deg,
+        rgba(11, 31, 58, 0.96) 0%,
+        rgba(11, 31, 58, 0.83) 55%,
+        rgba(11, 31, 58, 0.48) 100%
     );
 }
 
@@ -249,9 +262,9 @@ button {
 
 .hero-label {
     display: inline-block;
-    background: rgba(0, 197, 232, 0.15);
-    border: 1px solid rgba(0, 197, 232, 0.5);
-    color: #65eaff;
+    background: rgba(212, 160, 23, 0.15);
+    border: 1px solid var(--gold);
+    color: var(--gold-light);
     padding: 8px 16px;
     border-radius: 30px;
     font-size: 12px;
@@ -269,7 +282,7 @@ button {
 }
 
 .hero-content h1 span {
-    color: var(--cyan);
+    color: var(--gold-light);
 }
 
 .hero-description {
@@ -280,33 +293,37 @@ button {
 }
 
 .hero-buttons a:first-child {
-    background: var(--blue);
-    color: var(--white);
+    background: linear-gradient(
+        135deg,
+        var(--gold-light),
+        var(--gold)
+    );
+    color: var(--primary);
+    box-shadow: 0 5px 18px rgba(212, 160, 23, 0.25);
 }
 
 .hero-buttons a:first-child:hover {
-    background: var(--cyan);
-    color: var(--primary);
+    background: var(--white);
 }
 
 .hero-buttons a:last-child {
-    border: 1px solid rgba(255, 255, 255, 0.8);
+    border: 1px solid var(--gold-light);
     color: var(--white);
 }
 
 .hero-buttons a:last-child:hover {
-    background: var(--white);
+    background: var(--gold);
     color: var(--primary);
 }
 
 .hero-motto {
     margin-top: 35px;
-    color: #d4e8f5;
+    color: var(--gold-light);
     font-size: 14px;
     font-style: italic;
 }
 
-/* 6. SECTION PRESENTATION */
+/* 7. SECTION PRESENTATION */
 .about {
     background: var(--white);
 }
@@ -333,8 +350,8 @@ button {
     gap: 15px;
     margin-top: 25px;
     padding: 22px;
-    background: var(--light);
-    border-left: 4px solid var(--blue);
+    background: #FFF9E9;
+    border-left: 4px solid var(--gold);
     border-radius: 10px;
 }
 
@@ -345,15 +362,30 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(8, 120, 209, 0.12);
-    color: var(--blue);
+    background: rgba(212, 160, 23, 0.16);
+    color: var(--gold-dark);
     border-radius: 50%;
     font-size: 20px;
 }
 
-/* 7. SECTION VISION */
+/* 8. SECTION VISION */
 .vision {
-    background: var(--light);
+    background: var(--primary);
+    position: relative;
+}
+
+.vision .section-heading h2 {
+    color: var(--white);
+}
+
+.vision .section-heading p {
+    color: #D4DFEA;
+}
+
+.vision .section-tag {
+    background: rgba(212, 160, 23, 0.15);
+    color: var(--gold-light);
+    border-color: rgba(212, 160, 23, 0.4);
 }
 
 .vision-grid {
@@ -363,17 +395,17 @@ button {
 }
 
 .vision-card {
-    background: var(--white);
+    background: #102B4B;
     padding: 30px 25px;
     border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    border: 1px solid var(--border);
+    border: 1px solid rgba(245, 197, 66, 0.2);
     transition: 0.3s ease;
 }
 
 .vision-card:hover {
     transform: translateY(-7px);
-    border-color: var(--cyan);
+    border-color: var(--gold);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
 }
 
 .card-icon {
@@ -382,27 +414,27 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(8, 120, 209, 0.1);
-    color: var(--blue);
+    background: rgba(212, 160, 23, 0.15);
+    color: var(--gold-light);
     border-radius: 13px;
     font-size: 25px;
     margin-bottom: 20px;
 }
 
 .vision-card h3 {
-    color: var(--primary);
+    color: var(--gold-light);
     font-size: 19px;
     margin-bottom: 12px;
 }
 
 .vision-card p {
-    color: var(--text);
+    color: #D4DFEA;
     font-size: 14px;
 }
 
-/* 8. DOMAINES DE FORMATION */
+/* 9. DOMAINES DE FORMATION */
 .domains {
-    background: var(--white);
+    background: var(--light);
 }
 
 .domains-grid {
@@ -414,8 +446,9 @@ button {
 .domain-card {
     position: relative;
     padding: 30px 25px;
-    background: var(--light);
+    background: var(--white);
     border: 1px solid var(--border);
+    border-bottom: 4px solid var(--gold);
     border-radius: var(--radius);
     transition: 0.3s ease;
     overflow: hidden;
@@ -423,14 +456,16 @@ button {
 
 .domain-card:hover {
     background: var(--primary);
+    border-bottom-color: var(--gold-light);
     transform: translateY(-6px);
+    box-shadow: var(--shadow);
 }
 
 .domain-number {
     position: absolute;
     top: 15px;
     right: 20px;
-    color: rgba(8, 120, 209, 0.16);
+    color: rgba(212, 160, 23, 0.22);
     font-size: 35px;
     font-weight: 800;
 }
@@ -441,11 +476,12 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(8, 120, 209, 0.12);
+    background: rgba(8, 120, 209, 0.1);
     color: var(--blue);
     border-radius: 13px;
     font-size: 24px;
     margin-bottom: 20px;
+    transition: 0.3s ease;
 }
 
 .domain-card h3 {
@@ -459,24 +495,31 @@ button {
     font-size: 14px;
 }
 
-.domain-card:hover h3,
+.domain-card:hover .domain-icon {
+    background: rgba(212, 160, 23, 0.17);
+    color: var(--gold-light);
+}
+
+.domain-card:hover h3 {
+    color: var(--gold-light);
+}
+
 .domain-card:hover p {
-    color: var(--white);
+    color: #D4DFEA;
 }
 
 .domain-card:hover .domain-number {
-    color: rgba(255, 255, 255, 0.15);
+    color: rgba(245, 197, 66, 0.25);
 }
 
-
-/* =========================================
-   CREDIGITAL TECHNOLOGY
+/* ==================================================
+   CREDIGITAL TECHNOLOGY ACADEMY
    CSS COMPLET - PARTIE 2/2
-========================================= */
+================================================== */
 
-/* 9. PARCOURS / ETAPES */
+/* 10. PARCOURS / ETAPES */
 .journey {
-    background: var(--light);
+    background: var(--white);
 }
 
 .journey-grid {
@@ -487,16 +530,19 @@ button {
 
 .journey-step {
     position: relative;
-    background: var(--white);
+    background: var(--light);
     padding: 28px 22px;
     border-radius: var(--radius);
     border: 1px solid var(--border);
+    border-bottom: 4px solid var(--gold);
     box-shadow: var(--shadow);
     transition: 0.3s ease;
 }
 
 .journey-step:hover {
     transform: translateY(-6px);
+    background: var(--primary);
+    border-bottom-color: var(--gold-light);
 }
 
 .step-number {
@@ -505,8 +551,8 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--blue);
-    color: var(--white);
+    background: var(--gold);
+    color: var(--primary);
     font-weight: 800;
     border-radius: 50%;
     margin-bottom: 20px;
@@ -523,9 +569,17 @@ button {
     font-size: 14px;
 }
 
-/* 10. SECTION INSCRIPTION */
+.journey-step:hover h3 {
+    color: var(--gold-light);
+}
+
+.journey-step:hover p {
+    color: #D4DFEA;
+}
+
+/* 11. SECTION INSCRIPTION */
 .registration {
-    background: var(--white);
+    background: var(--light);
 }
 
 .registration-wrapper {
@@ -540,6 +594,8 @@ button {
     color: var(--white);
     padding: 35px 30px;
     border-radius: var(--radius);
+    border: 1px solid rgba(212, 160, 23, 0.3);
+    box-shadow: var(--shadow);
 }
 
 .registration-icon {
@@ -548,20 +604,22 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(0, 197, 232, 0.15);
-    color: var(--cyan);
+    background: rgba(212, 160, 23, 0.15);
+    color: var(--gold-light);
+    border: 1px solid rgba(212, 160, 23, 0.35);
     border-radius: 15px;
     font-size: 27px;
     margin-bottom: 22px;
 }
 
 .registration-info h3 {
+    color: var(--gold-light);
     font-size: 23px;
     margin-bottom: 15px;
 }
 
 .registration-info p {
-    color: rgba(255, 255, 255, 0.8);
+    color: #D4DFEA;
     font-size: 14px;
     margin-bottom: 20px;
 }
@@ -575,31 +633,35 @@ button {
     padding-left: 25px;
     margin-bottom: 13px;
     font-size: 14px;
-    color: rgba(255, 255, 255, 0.9);
+    color: #F0F4F8;
 }
 
 .registration-info ul li::before {
     content: "✓";
     position: absolute;
     left: 0;
-    color: var(--cyan);
+    color: var(--gold-light);
     font-weight: 800;
 }
 
 .registration-note {
     margin-top: 25px;
     padding: 15px;
-    background: rgba(255, 255, 255, 0.09);
+    background: rgba(212, 160, 23, 0.12);
+    border-left: 3px solid var(--gold);
     border-radius: 9px;
+    color: var(--gold-light);
     font-size: 13px;
 }
 
-/* 11. FORMULAIRE */
+/* 12. FORMULAIRE D'INSCRIPTION */
 .registration-form {
     padding: 35px;
-    background: var(--light);
+    background: var(--white);
     border: 1px solid var(--border);
+    border-top: 4px solid var(--gold);
     border-radius: var(--radius);
+    box-shadow: var(--shadow);
 }
 
 .registration-form h3 {
@@ -641,9 +703,9 @@ button {
 .form-group textarea {
     width: 100%;
     padding: 13px 14px;
-    border: 1px solid #d7e1eb;
+    border: 1px solid #D7E1EB;
     border-radius: 8px;
-    background: var(--white);
+    background: #FAFCFF;
     color: var(--dark);
     outline: none;
     font-size: 14px;
@@ -653,8 +715,9 @@ button {
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
-    border-color: var(--blue);
-    box-shadow: 0 0 0 3px rgba(8, 120, 209, 0.1);
+    border-color: var(--gold);
+    background: var(--white);
+    box-shadow: 0 0 0 3px rgba(212, 160, 23, 0.14);
 }
 
 .form-group textarea {
@@ -676,7 +739,7 @@ button {
 
 .consent-label input {
     margin-top: 5px;
-    accent-color: var(--blue);
+    accent-color: var(--gold-dark);
 }
 
 .form-message {
@@ -688,17 +751,23 @@ button {
     width: 100%;
     margin-top: 22px;
     padding: 15px 20px;
-    background: var(--blue);
-    color: var(--white);
+    background: linear-gradient(
+        135deg,
+        var(--gold-light),
+        var(--gold)
+    );
+    color: var(--primary);
     border: none;
     border-radius: 8px;
-    font-weight: 700;
+    font-weight: 800;
     font-size: 15px;
     transition: 0.3s ease;
+    box-shadow: 0 5px 15px rgba(212, 160, 23, 0.2);
 }
 
 .submit-button:hover {
     background: var(--primary);
+    color: var(--gold-light);
     transform: translateY(-2px);
 }
 
@@ -709,9 +778,9 @@ button {
     text-align: center;
 }
 
-/* 12. SECTION CONTACT */
+/* 13. SECTION CONTACT */
 .contact {
-    background: var(--light);
+    background: var(--white);
 }
 
 .contact-grid {
@@ -721,8 +790,9 @@ button {
 }
 
 .contact-card {
-    background: var(--white);
+    background: var(--light);
     border: 1px solid var(--border);
+    border-bottom: 4px solid var(--gold);
     border-radius: var(--radius);
     padding: 30px 22px;
     text-align: center;
@@ -732,6 +802,8 @@ button {
 .contact-card:hover {
     transform: translateY(-6px);
     box-shadow: var(--shadow);
+    background: var(--primary);
+    border-bottom-color: var(--gold-light);
 }
 
 .contact-icon {
@@ -742,18 +814,18 @@ button {
     justify-content: center;
     margin: 0 auto 18px;
     border-radius: 50%;
-    background: rgba(8, 120, 209, 0.1);
-    color: var(--blue);
+    background: rgba(212, 160, 23, 0.14);
+    color: var(--gold-dark);
     font-size: 25px;
 }
 
 .whatsapp-icon {
-    background: rgba(18, 168, 117, 0.12);
+    background: rgba(18, 168, 117, 0.13);
     color: var(--green);
 }
 
 .email-icon {
-    background: rgba(8, 120, 209, 0.1);
+    background: rgba(8, 120, 209, 0.12);
     color: var(--blue);
 }
 
@@ -776,24 +848,37 @@ button {
     overflow-wrap: anywhere;
 }
 
-.contact-link:hover {
-    color: var(--green);
+.contact-card:hover h3 {
+    color: var(--gold-light);
 }
 
-/* 13. APPEL A L'ACTION FINAL */
+.contact-card:hover p {
+    color: #D4DFEA;
+}
+
+.contact-card:hover .contact-link {
+    color: var(--gold-light);
+}
+
+/* 14. APPEL A L'ACTION FINAL */
 .final-cta {
     position: relative;
     padding: 75px 20px;
-    background: linear-gradient(120deg, var(--primary), var(--secondary));
+    background: linear-gradient(
+        120deg,
+        var(--primary),
+        var(--secondary)
+    );
+    border-top: 4px solid var(--gold);
     color: var(--white);
     text-align: center;
 }
 
 .cta-label {
     display: inline-block;
-    color: var(--cyan);
+    color: var(--gold-light);
     font-size: 12px;
-    font-weight: 700;
+    font-weight: 800;
     letter-spacing: 1.5px;
     margin-bottom: 15px;
     text-transform: uppercase;
@@ -802,6 +887,7 @@ button {
 .final-cta h2 {
     max-width: 750px;
     margin: 0 auto 18px;
+    color: var(--white);
     font-size: clamp(27px, 4vw, 40px);
     line-height: 1.25;
 }
@@ -809,15 +895,16 @@ button {
 .final-cta p {
     max-width: 650px;
     margin: 0 auto 25px;
-    color: rgba(255, 255, 255, 0.85);
+    color: #D4DFEA;
     font-size: 15px;
 }
 
-/* 14. PIED DE PAGE */
+/* 15. PIED DE PAGE */
 .footer {
     background: #071629;
     color: var(--white);
     padding: 65px 0 0;
+    border-top: 3px solid var(--gold);
 }
 
 .footer-grid {
@@ -843,24 +930,25 @@ button {
     height: 55px;
     object-fit: contain;
     border-radius: 50%;
+    border: 2px solid var(--gold);
 }
 
 .footer-logo span {
-    color: var(--white);
+    color: var(--gold-light);
     font-size: 16px;
     font-weight: 800;
 }
 
 .footer-brand p {
-    color: #b9c8d8;
+    color: #B9C8D8;
     font-size: 13px;
 }
 
 .footer-links h3,
 .footer-contact h3 {
+    color: var(--gold-light);
     font-size: 17px;
     margin-bottom: 20px;
-    color: var(--cyan);
 }
 
 .footer-links ul {
@@ -873,18 +961,18 @@ button {
 
 .footer-links a,
 .footer-contact a {
-    color: #b9c8d8;
+    color: #B9C8D8;
     font-size: 13px;
     transition: 0.3s ease;
 }
 
 .footer-links a:hover,
 .footer-contact a:hover {
-    color: var(--cyan);
+    color: var(--gold-light);
 }
 
 .footer-contact p {
-    color: #b9c8d8;
+    color: #B9C8D8;
     font-size: 13px;
     margin-bottom: 12px;
     overflow-wrap: anywhere;
@@ -893,21 +981,22 @@ button {
 .footer-motto {
     padding: 20px 0;
     text-align: center;
-    color: var(--cyan);
+    color: var(--gold-light);
     font-size: 14px;
     font-weight: 600;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(245, 197, 66, 0.2);
 }
 
 .footer-bottom {
     padding: 18px 10px;
-    background: #04101e;
+    background: #04101E;
+    border-top: 1px solid rgba(212, 160, 23, 0.2);
     text-align: center;
-    color: #aab9c8;
+    color: #AAB9C8;
     font-size: 12px;
 }
 
-/* 15. ADAPTATION TABLETTES */
+/* 16. ADAPTATION TABLETTES */
 @media (max-width: 992px) {
     .navigation {
         gap: 14px;
@@ -935,7 +1024,7 @@ button {
     }
 }
 
-/* 16. ADAPTATION TELEPHONES */
+/* 17. ADAPTATION TELEPHONES */
 @media (max-width: 768px) {
     .section-padding {
         padding: 65px 0;
@@ -974,8 +1063,8 @@ button {
         left: 0;
         width: 100%;
         padding: 20px 5%;
-        background: var(--white);
-        box-shadow: 0 12px 20px rgba(0, 0, 0, 0.08);
+        background: var(--primary);
+        box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
         flex-direction: column;
         align-items: stretch;
         gap: 0;
@@ -989,7 +1078,7 @@ button {
         display: block;
         padding: 13px 5px;
         font-size: 14px;
-        border-bottom: 1px solid var(--border);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
     }
 
     .navigation .nav-button {
@@ -1056,7 +1145,7 @@ button {
     }
 }
 
-/* 17. PETITS ECRANS */
+/* 18. PETITS ECRANS */
 @media (max-width: 480px) {
     .logo {
         gap: 8px;
@@ -1100,13 +1189,13 @@ button {
     }
 }
 
-/* 18. ACCESSIBILITE ET CONFORT */
+/* 19. ACCESSIBILITE ET CONFORT */
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
 select:focus-visible,
 textarea:focus-visible {
-    outline: 3px solid var(--cyan);
+    outline: 3px solid var(--gold-light);
     outline-offset: 3px;
 }
 
@@ -1119,4 +1208,3 @@ textarea:focus-visible {
         animation-duration: 0.01ms !important;
     }
 }
-
