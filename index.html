@@ -562,367 +562,257 @@
 
                 <!-- FORMULAIRE DE PRÉINSCRIPTION -->
 
-                <form
-                    id="registration-form"
-                    class="registration-form"
-                    action="https://formsubmit.co/idjee06@gmail.com"
-                    method="POST"
-                >
-
-                    <h3>Formulaire de préinscription</h3>
-
-                    <p class="form-description">
-                        Les champs marqués d'un astérisque (*) sont obligatoires.
-                    </p>
-
-
-                    <!-- CONFIGURATION FORMSUBMIT -->
-
-                    <input
-                        type="hidden"
-                        name="_subject"
-                        value="Nouvelle préinscription - Programme Entrepreneuriat"
-                    >
-
-                    <input
-                        type="hidden"
-                        name="_template"
-                        value="table"
-                    >
-
-                    <input
-                        type="hidden"
-                        name="_captcha"
-                        value="false"
-                    >
-
-                    <!-- REDIRECTION APRÈS ENVOI -->
-                    <input
-                        type="hidden"
-                        name="_next"
-                        id="form-redirect"
-                        value=""
-                    >
-
-                    <!-- PROTECTION ANTI-SPAM -->
-                    <input
-                        type="text"
-                        name="_honey"
-                        style="display:none"
-                        tabindex="-1"
-                        autocomplete="off"
-                    >
-
-
-                    <div class="form-grid">
-
-                        <!-- NOM -->
-                        <div class="form-group">
-
-                            <label for="nom">Nom *</label>
-
-                            <input
-                                type="text"
-                                id="nom"
-                                name="nom"
-                                placeholder="Ton nom"
-                                autocomplete="family-name"
-                                required
-                            >
-
-                        </div>
-
-
-                        <!-- PRÉNOMS -->
-                        <div class="form-group">
-
-                            <label for="prenoms">Prénoms *</label>
-
-                            <input
-                                type="text"
-                                id="prenoms"
-                                name="prenoms"
-                                placeholder="Tes prénoms"
-                                autocomplete="given-name"
-                                required
-                            >
-
-                        </div>
-
-
-                        <!-- WHATSAPP -->
-                        <div class="form-group">
-
-                            <label for="whatsapp">
-                                Numéro WhatsApp *
-                            </label>
-
-                            <input
-                                type="tel"
-                                id="whatsapp"
-                                name="whatsapp"
-                                placeholder="+229 01 XX XX XX XX"
-                                autocomplete="tel"
-                                required
-                            >
-
-                        </div>
-
-
-                        <!-- EMAIL -->
-                        <div class="form-group">
-
-                            <label for="email">
-                                Adresse e-mail
-                            </label>
-
-                            <input
-                                type="email"
-                                id="email"
-                                name="email"
-                                placeholder="exemple@email.com"
-                                autocomplete="email"
-                            >
-
-                        </div>
-
-
-                        <!-- STATUT -->
-                        <div class="form-group">
-
-                            <label for="statut">
-                                Statut actuel *
-                            </label>
-
-                            <select
-                                id="statut"
-                                name="statut"
-                                required
-                            >
-
-                                <option value="">
-                                    Sélectionne ton statut
-                                </option>
-
-                                <option value="Étudiant">
-                                    Étudiant(e)
-                                </option>
-
-                                <option value="Jeune diplômé">
-                                    Jeune diplômé(e)
-                                </option>
-
-                            </select>
-
-                        </div>
-
-
-                        <!-- PAYS -->
-                        <div class="form-group">
-
-                            <label for="pays">Pays *</label>
-
-                            <input
-                                type="text"
-                                id="pays"
-                                name="pays"
-                                placeholder="Exemple : Bénin"
-                                value="Bénin"
-                                required
-                            >
-
-                        </div>
-
-
-                        <!-- UNIVERSITÉ -->
-                        <div class="form-group">
-
-                            <label for="universite">
-                                Université ou établissement
-                            </label>
-
-                            <input
-                                type="text"
-                                id="universite"
-                                name="universite"
-                                placeholder="Nom de ton établissement"
-                            >
-
-                        </div>
-
-
-                        <!-- FILIÈRE -->
-                        <div class="form-group">
-
-                            <label for="filiere">Filière</label>
-
-                            <input
-                                type="text"
-                                id="filiere"
-                                name="filiere"
-                                placeholder="Exemple : Informatique"
-                            >
-
-                        </div>
-
-
-                        <!-- NIVEAU -->
-                        <div class="form-group">
-
-                            <label for="niveau">
-                                Niveau d'études
-                            </label>
-
-                            <select
-                                id="niveau"
-                                name="niveau"
-                            >
-
-                                <option value="">
-                                    Sélectionne ton niveau
-                                </option>
-
-                                <option value="Licence 1">Licence 1</option>
-
-                                <option value="Licence 2">Licence 2</option>
-
-                                <option value="Licence 3">Licence 3</option>
-
-                                <option value="Master 1">Master 1</option>
-
-                                <option value="Master 2">Master 2</option>
-
-                                <option value="Doctorat">Doctorat</option>
-
-                                <option value="Autre">Autre</option>
-
-                            </select>
-
-                        </div>
-
-
-                        <!-- VILLE -->
-                        <div class="form-group">
-
-                            <label for="ville">
-                                Ville ou commune
-                            </label>
-
-                            <input
-                                type="text"
-                                id="ville"
-                                name="ville"
-                                placeholder="Exemple : Abomey-Calavi"
-                            >
-
-                        </div>
-
-
-                        <!-- IDÉE DE PROJET -->
-                        <div class="form-group">
-
-                            <label for="idee">
-                                As-tu déjà une idée de projet ?
-                            </label>
-
-                            <select
-                                id="idee"
-                                name="idee_projet"
-                            >
-
-                                <option value="">
-                                    Sélectionne une réponse
-                                </option>
-
-                                <option value="Oui">Oui</option>
-
-                                <option value="Non">Non</option>
-
-                                <option value="Je réfléchis encore">
-                                    Je réfléchis encore
-                                </option>
-
-                            </select>
-
-                        </div>
-
-
-                        <!-- DESCRIPTION DU PROJET -->
-                        <div class="form-group full-width">
-
-                            <label for="projet">
-                                Décris brièvement ton idée de projet
-                            </label>
-
-                            <textarea
-                                id="projet"
-                                name="description_projet"
-                                rows="4"
-                                placeholder="Présente ton idée en quelques mots..."
-                            ></textarea>
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- CONSENTEMENT -->
-                    <div class="consent-group">
-
-                        <label class="consent-label">
-
-                            <input
-                                type="checkbox"
-                                name="consentement"
-                                value="Accepté"
-                                required
-                            >
-
-                            <span>
-                                J'accepte que les informations fournies
-                                soient utilisées pour traiter ma manifestation
-                                d'intérêt et me communiquer les informations
-                                relatives au programme.
-                            </span>
-
-                        </label>
-
-                    </div>
-
-
-                    <!-- MESSAGE DE RETOUR -->
-                    <div
-                        id="form-message"
-                        class="form-message"
-                        role="status"
-                        aria-live="polite"
-                    ></div>
-
-
-                    <!-- BOUTON D'ENVOI -->
-                    <button
-                        type="submit"
-                        class="btn btn-primary submit-button"
-                        id="submit-button"
-                    >
-
-                        Envoyer ma préinscription
-
-                        <i class="fas fa-paper-plane"></i>
-
-                    </button>
-
-
-                    <p class="form-security">
-
-                        <i class="fas fa-lock"></i>
-
-                        Tes informations sont utilisées pour le suivi
-                        de ta demande.
-
-                    </p>
-
-                </form>
+                     
+<form
+    id="registration-form"
+    class="registration-form"
+    action="https://formsubmit.co/idjee06@gmail.com"
+    method="POST"
+>
+
+    <h3>Formulaire de préinscription</h3>
+
+    <p class="form-description">
+        Les champs marqués d'un astérisque (*) sont obligatoires.
+    </p>
+
+    <!-- CONFIGURATION FORMSUBMIT -->
+
+    <input
+        type="hidden"
+        name="_subject"
+        value="Nouvelle préinscription - Programme Entrepreneuriat"
+    >
+
+    <input
+        type="hidden"
+        name="_template"
+        value="table"
+    >
+
+    <input
+        type="hidden"
+        name="_captcha"
+        value="false"
+    >
+
+    <!-- REDIRECTION APRÈS ENVOI -->
+
+    <input
+        type="hidden"
+        name="_next"
+        value="https://ijee1.github.io/initiation-jeunes-etudiants-entrepreneuriat/merci.html"
+    >
+
+    <!-- PROTECTION ANTI-SPAM -->
+
+    <input
+        type="text"
+        name="_honey"
+        style="display:none"
+        tabindex="-1"
+        autocomplete="off"
+    >
+
+    <div class="form-grid">
+
+        <!-- NOM -->
+        <div class="form-group">
+            <label for="nom">Nom *</label>
+            <input
+                type="text"
+                id="nom"
+                name="nom"
+                placeholder="Ton nom"
+                autocomplete="family-name"
+                required
+            >
+        </div>
+
+        <!-- PRÉNOMS -->
+        <div class="form-group">
+            <label for="prenoms">Prénoms *</label>
+            <input
+                type="text"
+                id="prenoms"
+                name="prenoms"
+                placeholder="Tes prénoms"
+                autocomplete="given-name"
+                required
+            >
+        </div>
+
+        <!-- WHATSAPP -->
+        <div class="form-group">
+            <label for="whatsapp">Numéro WhatsApp *</label>
+            <input
+                type="tel"
+                id="whatsapp"
+                name="whatsapp"
+                placeholder="+229 01 XX XX XX XX"
+                autocomplete="tel"
+                required
+            >
+        </div>
+
+        <!-- EMAIL -->
+        <div class="form-group">
+            <label for="email">Adresse e-mail</label>
+            <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="exemple@email.com"
+                autocomplete="email"
+            >
+        </div>
+
+        <!-- STATUT -->
+        <div class="form-group">
+            <label for="statut">Statut actuel *</label>
+            <select id="statut" name="statut" required>
+                <option value="">Sélectionne ton statut</option>
+                <option value="Étudiant">Étudiant(e)</option>
+                <option value="Jeune diplômé">Jeune diplômé(e)</option>
+            </select>
+        </div>
+
+        <!-- PAYS -->
+        <div class="form-group">
+            <label for="pays">Pays *</label>
+            <input
+                type="text"
+                id="pays"
+                name="pays"
+                placeholder="Exemple : Bénin"
+                value="Bénin"
+                required
+            >
+        </div>
+
+        <!-- UNIVERSITÉ -->
+        <div class="form-group">
+            <label for="universite">Université ou établissement</label>
+            <input
+                type="text"
+                id="universite"
+                name="universite"
+                placeholder="Nom de ton établissement"
+            >
+        </div>
+
+        <!-- FILIÈRE -->
+        <div class="form-group">
+            <label for="filiere">Filière</label>
+            <input
+                type="text"
+                id="filiere"
+                name="filiere"
+                placeholder="Exemple : Informatique"
+            >
+        </div>
+
+        <!-- NIVEAU -->
+        <div class="form-group">
+            <label for="niveau">Niveau d'études</label>
+            <select id="niveau" name="niveau">
+                <option value="">Sélectionne ton niveau</option>
+                <option value="Licence 1">Licence 1</option>
+                <option value="Licence 2">Licence 2</option>
+                <option value="Licence 3">Licence 3</option>
+                <option value="Master 1">Master 1</option>
+                <option value="Master 2">Master 2</option>
+                <option value="Doctorat">Doctorat</option>
+                <option value="Autre">Autre</option>
+            </select>
+        </div>
+
+        <!-- VILLE -->
+        <div class="form-group">
+            <label for="ville">Ville ou commune</label>
+            <input
+                type="text"
+                id="ville"
+                name="ville"
+                placeholder="Exemple : Abomey-Calavi"
+            >
+        </div>
+
+        <!-- IDÉE DE PROJET -->
+        <div class="form-group">
+            <label for="idee">As-tu déjà une idée de projet ?</label>
+            <select id="idee" name="idee_projet">
+                <option value="">Sélectionne une réponse</option>
+                <option value="Oui">Oui</option>
+                <option value="Non">Non</option>
+                <option value="Je réfléchis encore">
+                    Je réfléchis encore
+                </option>
+            </select>
+        </div>
+
+        <!-- DESCRIPTION DU PROJET -->
+        <div class="form-group full-width">
+            <label for="projet">
+                Décris brièvement ton idée de projet
+            </label>
+            <textarea
+                id="projet"
+                name="description_projet"
+                rows="4"
+                placeholder="Présente ton idée en quelques mots..."
+            ></textarea>
+        </div>
+
+    </div>
+
+    <!-- CONSENTEMENT -->
+
+    <div class="consent-group">
+        <label class="consent-label">
+            <input
+                type="checkbox"
+                name="consentement"
+                value="Accepté"
+                required
+            >
+
+            <span>
+                J'accepte que les informations fournies
+                soient utilisées pour traiter ma manifestation
+                d'intérêt et me communiquer les informations
+                relatives au programme.
+            </span>
+        </label>
+    </div>
+
+    <!-- MESSAGE DE RETOUR -->
+
+    <div
+        id="form-message"
+        class="form-message"
+        role="status"
+        aria-live="polite"
+    ></div>
+
+    <!-- BOUTON D'ENVOI -->
+
+    <button
+        type="submit"
+        class="btn btn-primary submit-button"
+        id="submit-button"
+    >
+        Envoyer ma préinscription
+        <i class="fas fa-paper-plane"></i>
+    </button>
+
+    <p class="form-security">
+        <i class="fas fa-lock"></i>
+        Tes informations sont utilisées pour le suivi
+        de ta demande.
+    </p>
+
+</form>
 
             </div>
 
