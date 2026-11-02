@@ -375,80 +375,96 @@
 
     </main>
 
-    <script>
-        const savedData = sessionStorage.getItem("idjeeInscription");
+      
+<script>
 
-        if (savedData) {
+const savedData = localStorage.getItem("idjeeInscription");
 
-            try {
+const message = document.getElementById("welcome-message");
+const details = document.getElementById("registration-details");
 
-                const student = JSON.parse(savedData);
+if (savedData) {
 
-                const fullName = [
-                    student.nom,
-                    student.prenoms
-                ].filter(Boolean).join(" ");
+    try {
 
-                document.getElementById("welcome-message").textContent =
-                    fullName
-                        ? `Merci ${fullName}, votre demande de préinscription a bien été transmise !`
-                        : "Merci pour votre intérêt envers le programme IDJEE.";
+        const student = JSON.parse(savedData);
 
-                document.getElementById("student-name").textContent =
-                    fullName || "Non renseigné";
+        const fullName = [
+            student.nom,
+            student.prenoms
+        ].filter(Boolean).join(" ");
 
-                document.getElementById("student-email").textContent =
-                    student.email || "Non renseigné";
+        message.textContent =
+            `Merci ${fullName}, votre préinscription a bien été transmise !`;
 
-                document.getElementById("student-whatsapp").textContent =
-                    student.whatsapp || "Non renseigné";
+        const fields = [
+            ["Nom et prénoms", fullName],
+            ["Adresse e-mail", student.email],
+            ["WhatsApp", student.whatsapp],
+            ["Statut", student.statut],
+            ["Pays", student.pays],
+            ["Ville ou commune", student.ville],
+            ["Établissement", student.universite],
+            ["Filière", student.filiere],
+            ["Niveau d'études", student.niveau],
+            ["Idée de projet", student.idee],
+            ["Description du projet", student.projet]
+        ];
 
-                document.getElementById("student-status").textContent =
-                    student.statut || "Non renseigné";
+        const title = document.createElement("h2");
+        title.className = "details-title";
+        title.textContent = "Récapitulatif de votre préinscription";
 
-                document.getElementById("student-country").textContent =
-                    student.pays || "Non renseigné";
+        const grid = document.createElement("div");
+        grid.className = "details";
 
-                document.getElementById("student-city").textContent =
-                    student.ville || "Non renseigné";
+        fields.forEach(function (field) {
 
-                document.getElementById("student-school").textContent =
-                    student.universite || "Non renseigné";
+            const item = document.createElement("div");
+            item.className = "detail-item";
 
-                document.getElementById("student-field").textContent =
-                    student.filiere || "Non renseigné";
-
-                document.getElementById("student-level").textContent =
-                    student.niveau || "Non renseigné";
-
-                document.getElementById("student-idea").textContent =
-                    student.idee || "Non renseigné";
-
-                document.getElementById("student-project").textContent =
-                    student.projet || "Non renseigné";
-
-            } catch (error) {
-
-                document.getElementById("welcome-message").textContent =
-                    "Merci pour votre intérêt envers le programme IDJEE.";
-
+            if (field[0] === "Description du projet") {
+                item.classList.add("full");
             }
 
-        } else {
+            const label = document.createElement("span");
+            label.textContent = field[0];
 
-            document.getElementById("registration-details").innerHTML = `
-                <p class="missing">
-                    Aucun récapitulatif de préinscription n'est disponible
-                    dans cette session. Si vous venez de remplir le formulaire,
-                    vérifiez que vous avez utilisé le même navigateur et le même onglet.
-                </p>
-            `;
+            const value = document.createElement("strong");
+            value.textContent = field[1] || "Non renseigné";
 
-            document.getElementById("welcome-message").textContent =
-                "Bienvenue sur la page de confirmation IDJEE.";
+            item.appendChild(label);
+            item.appendChild(value);
 
-        }
-    </script>
+            grid.appendChild(item);
+
+        });
+
+        details.replaceChildren(title, grid);
+
+        // Nettoyer les données après affichage
+        localStorage.removeItem("idjeeInscription");
+
+    } catch (error) {
+
+        console.error("Erreur de lecture :", error);
+
+        message.textContent =
+            "Votre demande a été transmise, mais le récapitulatif est indisponible.";
+
+    }
+
+} else {
+
+    message.textContent =
+        "Aucun récapitulatif de préinscription n'est disponible pour cette visite.";
+
+    details.textContent =
+        "Veuillez remplir le formulaire depuis la page d'accueil IDJEE.";
+
+}
+
+</script>
 
 </body>
 </html>
